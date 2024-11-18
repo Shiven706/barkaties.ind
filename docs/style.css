@@ -1,0 +1,193 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #00bcd4; /* Teal color */
+    animation: slideDown 1s ease-in-out;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ddd;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+  }
+  
+  .team-member {
+    position: relative;
+    cursor: pointer;
+    width: 220px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid transparent;
+    transition: transform 0.4s ease-in-out, border-color 0.4s ease-in-out;
+  }
+  
+  .team-member:hover {
+    transform: scale(1.05);
+    border-color: #c20101; /* Neon red border on hover */
+  }
+  
+  .member-img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background: #1c1c1c; /* Dark background */
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.6), 0 0 30px rgba(0, 0, 255, 0.6); /* Neon light effects */
+    border: 4px solid #fff; /* Detailed white border */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.4s ease-in-out;
+  }
+  
+  .member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .team-member.clicked .member-img {
+    box-shadow: 0 0 30px rgba(255, 0, 85, 0.8), 0 0 40px rgba(0, 0, 255, 0.8); /* Intensified neon light effects */
+    transform: scale(1.2);
+  }
+  
+  .team-member.clicked .member-img img {
+    transform: scale(1.2);
+  }
+  
+  .member-details {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  .team-member.clicked .member-details {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  
+  .member-details h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #00bcd4; /* Teal color */
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .member-details p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  /* Background Animations */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-size: 200% 200%;
+    animation: slideBackground 15s infinite linear;
+    z-index: -1;
+  }
+  
+  @keyframes slideBackground {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes morph {
+    0% {
+      border-radius: 50%;
+      transform: scale(1);
+    }
+    50% {
+      border-radius: 10%;
+      transform: scale(1.1);
+    }
+    100% {
+      border-radius: 15px;
+      transform: scale(1.2);
+    }
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
